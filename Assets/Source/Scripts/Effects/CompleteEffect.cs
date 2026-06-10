@@ -27,8 +27,8 @@ public class CompleteEffect : MonoBehaviour
         int count = 10;
         float radius = 170f;
         float spread = 25f;
-        float duration = 1f;
-        float fadeDuration = 1.5f;
+        float duration = 0.75f;
+        float fadeDuration = 2f;
 
         for (int i = 0; i < count; i++)
         {
@@ -39,7 +39,6 @@ public class CompleteEffect : MonoBehaviour
             GameObject obj = Instantiate(_effectPart, transform.position, Quaternion.identity, transform);
             CanvasGroup cg = obj.GetComponent<CanvasGroup>() ?? obj.AddComponent<CanvasGroup>();
 
-            // Стартуем с localPosition = zero (центр родителя)
             obj.transform.localPosition = Vector3.zero;
 
             Sequence seq = DOTween.Sequence();
